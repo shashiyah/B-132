@@ -1,0 +1,8 @@
+setwd("C:/Users/Shashi Edirisooriya/Desktop/team reaserch")
+getwd()
+list.files()
+list.files("dataset")
+data <- read.csv("dataset/playlist_2010to2023.csv", fileEncoding = "latin1")
+cat("Rows:", nrow(data), "\n")
+cat("Columns:", ncol(data), "\n")
+head(data, 3)
