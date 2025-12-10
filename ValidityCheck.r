@@ -1,0 +1,16 @@
+cat("\n--- Energy (should be 0-1) ---\n")
+cat("Min:", min(df$energy, na.rm = TRUE), "\n")
+cat("Max:", max(df$energy, na.rm = TRUE), "\n")
+invalid_energy <- sum(df$energy < 0 | df$energy > 1, na.rm = TRUE)
+cat("Values outside 0-1 range:", invalid_energy, "\n")
+
+cat("\n--- Loudness (typically -60 to 0 dB) ---\n")
+cat("Min:", min(df$loudness, na.rm = TRUE), "\n")
+cat("Max:", max(df$loudness, na.rm = TRUE), "\n")
+invalid_loudness <- sum(df$loudness > 0, na.rm = TRUE)
+cat("Values above 0 dB (unusual):", invalid_loudness, "\n")
+
+cat("\n--- Year (should be 2010-2023) ---\n")
+cat("Min year:", min(df$year, na.rm = TRUE), "\n")
+cat("Max year:", max(df$year, na.rm = TRUE), "\n")
+print(table(df$year))
